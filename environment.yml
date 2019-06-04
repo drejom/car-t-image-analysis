@@ -1,0 +1,13 @@
+name: imaging-study-analysis
+channels:
+  - defaults
+dependencies:
+  - python=3.6
+  - matplotlib
+  - pandas
+  - numpy
+  - statsmodels
+  - jupyter
+  - ipython
+  - xlrd
+  - vtk

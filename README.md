@@ -34,7 +34,7 @@ system, follow installation instructions at (https://git-lfs.github.com).
 
 If you are only interested in the final statistical analyses, without prior image processing, 
 you can use the Jupyter notebooks in the relvant *analysis* subfolders.
-These use data processing results from the *data* folder.
+These use processing results from the *data* folder.
 
 The file *environment_notebook_analysis.yml* defines a minimum CONDA environment for
 running the Jupyter notebooks included in this project.
