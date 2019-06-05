@@ -66,16 +66,17 @@ running the Jupyter notebooks included in this project.
 
 For image processing more libraries are needed.
 Major dependencies are:
+
 - always:
     - pandas
     - matplotlib
     - numpy
 - most image processing:
+    - grabbit
     - SimpleITK
     - pydicom
     - dicom2nifti
-- image registration & LVd computation
-    - ANTs
+    - vtk
 
 If running [CONDA](https://conda.io/docs/) python on MacOS,
 you can create a suitable python environment by
@@ -83,3 +84,8 @@ you can create a suitable python environment by
 conda env create -f environment.yml
 ```
 
+For image registration & LVd computation, the following additional dependencies need to be installed
+and path / environment settings in `config.py` be updated for the specific local installation:  
+    - [ANTs](http://stnava.github.io/ANTs/)
+
+These dependencies can be installed using the `install_dependencies.sh` script.    

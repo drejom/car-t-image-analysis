@@ -71,17 +71,10 @@ bratumia_merge_map_T2 = {
 #== path to IVY GAP data
 path_environment = os.environ.copy()
 
-if hostname=="danabl-CB-ISTB":
-    ants_path = "/home/danabl/software/ANTs_build/bin"
-    ants_script_path = "/home/danabl/software/ANTs/Scripts"
-    path_environment["PATH"] = ants_path + ":" + ants_script_path + ":" +\
-                               path_environment["PATH"]
-    path_environment["ANTSPATH"] = ants_path
-elif hostname=='daniel-pc':
-    ants_path = "/home/danabl/software/ANTs_build/bin"
-    ants_script_path = "/home/danabl/software/ANTs/Scripts"
-    path_environment["PATH"] = ants_path + ":" + ants_script_path + ":" + \
-                               path_environment["PATH"]
-    path_environment["ANTSPATH"] = ants_path
-else:
-    ants_script_path = "/Users/dabler/software/ANTs/scripts"
+
+ants_path = "/Users/mathoncuser/Desktop/DATA/car-t-image-analysis/ANTS/ANTs_build/bin"
+ants_script_path = ants_path
+path_environment["PATH"] = ants_path + ":" + ants_script_path + ":" +\
+                           path_environment["PATH"]
+path_environment["ANTSPATH"] = ants_path
+

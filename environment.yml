@@ -7,7 +7,11 @@ dependencies:
   - pandas
   - numpy
   - statsmodels
-  - jupyter
   - ipython
   - xlrd
-  - vtk
+  - xlwt
+  - pydicom
+  - pip:
+    - grabbit
+    - dicom2nifti
+    - SimpleITK

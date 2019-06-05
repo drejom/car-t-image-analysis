@@ -1,0 +1,48 @@
+{
+    "name": "bids",
+    "entities": [
+        {
+            "name": "subject",
+            "pattern": "[/\\\\]sub-([0-9]+)",
+            "directory": "{{root}}/{subject}"
+        },
+        {
+            "name": "session",
+            "pattern": "[_/\\\\]ses-([0-9]{4}-[0-9]{2}-[0-9]{2})"
+        },
+        {
+            "name": "modality",
+            "pattern": "[/\\\\](T1w|T2w|T2wPD|T2wFLAIR|T1wPost|T1w-3D|T1wPost-3D|DCE|ADC|DWI|DSC|DTI|tumorseg)[/\\\\]"
+        },
+        {
+            "name": "processing",
+            "pattern": "[/\\\\](original|registered|bratumia)[/\\\\]"
+        },
+        {
+            "name": "registration",
+            "pattern": "[_/\\\\]reg-(none|rigid|affine|deformable|reference)",
+            "mandatory": false,
+            "missing_value": "reg-none"
+        },
+        {
+            "name": "segmentation",
+            "pattern": "[_/\\\\]seg-(ventricle|brainmask|brain|tumormask|tumor)",
+            "mandatory": false
+        },
+        {
+            "name": "other",
+            "pattern": "[_/\\\\](withskull|skullstripped-rigid|skullstripped-affine|skullstripped|transform|manual-T1c-T2|manual-T1c)",
+            "missing_value": "normal"
+        },
+        {
+            "name": "alternative_name",
+            "pattern": "[_/\\\\](atlas)",
+            "mandatory": false,
+            "missing_value": "normal"
+        }
+    ],
+    "default_path_patterns": [
+        "sub-{subject}[/{processing}]/ses-{session}/{modality}/{alternative_name}[_reg-{registration}][_seg-{segmentation}][_{other}][.{extension}]",
+        "sub-{subject}[/{processing}]/ses-{session}/{modality}/sub-{subject}_ses-{session}_{modality}[_reg-{registration}][_seg-{segmentation}][_{other}][.{extension}]"
+    ]
+}
