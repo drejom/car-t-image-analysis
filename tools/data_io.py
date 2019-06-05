@@ -7,8 +7,9 @@ from datetime import datetime
 import shutil
 
 
-def create_session_name(date, day):
-    name="%s-day%03d" % (date.date().strftime('%Y-%m-%d'), day)
+def create_session_name(date):
+    #name="%s-day%04d" % (date.date().strftime('%Y-%m-%d'), day)
+    name = "%s" % (date.date().strftime('%Y-%m-%d'))
     return name
 
 def get_string_with_suffix_from_list(string_list, suffix_list):
@@ -166,6 +167,12 @@ class DataIO():
     def create_registered_image_path(self, subject, session, modality, registration='rigid',
                                      abs_path=True, create=True, processing='registered', **kwargs):
         path = self.create_path(subject=subject, session=session, modality=modality, registration=registration,
+                                processing=processing, abs_path=abs_path, create=create, **kwargs)
+        return path
+
+    def create_dce_analysis_path(self, subject, session, modality='DCE', abs_path=True, create=True,
+                                 processing='DCEanalysis', **kwargs):
+        path = self.create_path(subject=subject, session=session, modality=modality,
                                 processing=processing, abs_path=abs_path, create=create, **kwargs)
         return path
     #
